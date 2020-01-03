@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>search</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="textstyle.css">
+  
+
+</head>
+
+<body >
+    <div class="news-content">
+
+        <h2>Latest news</h2>
+        <div class="input-feild">
+            <input type="text" id="myText" value="" placeholder="search">
+            
+          <button onclick="userSearch()" class="btn-search"> search </button>
+          
+        </div>
+        <h5 id="demo"></h5> 
+             
+      <div id="card" align="center">
+        
+      </div>
+    
+      
+      
+       
+
+
+           
+    </div>
+
+
+    <script>
+        function userSearch(){
+          var x= document.getElementById("myText").value;
+          document.getElementById("demo").innerHTML="search " + x;
+        
+        
+          var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                
+                
+                var myObj = JSON.parse(xhttp.responseText);
+                  console.log(myObj.articles);
+                var output="";
+                for(var i=0;i<myObj.articles.length;i++){
+                // console.log(myObj.articles[i].author);
+                output+=`
+                <div class="row content">
+                <div class="  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                  <a href="${myObj.articles[i].url}" target="_blank">
+               
+                <img src= " ${myObj.articles[i].urlToImage}"  > </div>
+
+                <div class=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 content-text">
+                    <p class="content-paragraph">${myObj.articles[i].content}</p>
+                    <p class="source-name">${myObj.articles[i].source.name}</p>
+                    
+                 </a>
+                </div>
+                </div>
+                
+                
+                `;
+                
+                
+                }
+                document.getElementById("card").innerHTML=output;
+               
+                
+                }
+                };
+                xhttp.open("GET", "https://newsapi.org/v2/everything?q="+ x +"&apiKey=335c0e75fcf04cf18fbb1507f9ed273f&pageSize=100", true);
+                xhttp.send();
+                
+        }
+       
+        </script>
+</body>
+
+</html>
