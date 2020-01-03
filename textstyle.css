@@ -1,0 +1,187 @@
+
+       
+
+        .news-content h2 {
+            text-align: center;
+        }
+
+        #myText {
+            padding: 5px;
+            width: 50%;
+            border-radius: 10px;
+
+
+        }
+        .input-feild{
+            text-align: center;
+        }
+
+        .btn-search {
+            padding: 5px 10px;
+            border-radius: 10px;
+
+        }
+        #demo{
+            margin-left: 10%;
+            color: blue;
+        }
+#card img{
+    width: 100%;
+    border-radius: 10px;
+}
+.source-name{
+    margin-right: 50px;
+    float: right;
+}
+.content{
+    background-color: rgb(246, 243, 243);
+padding: 5px;
+border-radius: 10px;
+margin-top: 10px;
+width: 80%;
+text-align: justify;
+}
+.content a{
+    text-decoration: none;
+}
+#card div :hover{
+    transform: none;
+}
+#card :hover{
+    background-color: rgb(243, 236, 236);
+    transform: scale(1.01);
+}
+
+    /*** media query start from here**/
+   
+    @media screen and (max-width:900px) {
+      
+       
+
+        .news-content h2 {
+            text-align: center;
+        }
+
+        #myText {
+            padding: 5px;
+            width: 50%;
+
+
+        }
+        .input-feild{
+            text-align: center;
+        }
+
+        .btn-search {
+            padding: 5px 10px;
+
+        }
+        #demo{
+            margin-left: 10%;
+            color: blue;
+        }
+#card img{
+    
+    width: 100%;
+    height: 60%;
+    
+}
+.source-name{
+    margin-right: 50px;
+    float: right;
+}
+.content{
+width: 90%;
+}
+
+  
+    }
+
+    @media screen and (max-width:650px) {
+       
+        .news-content {
+
+            
+            padding-top: 15px;
+        }
+
+        .news-content h2 {
+        
+            font-size: 17px;
+        }
+        #demo{
+            font-size: 14px;
+        }
+
+        #myText {
+            padding: 3px;
+            width: 50%;
+    
+
+
+        }
+      
+
+        .btn-search {
+            padding: 2px 4px;
+            
+            border: none;
+
+        }
+       
+#card img{
+    width: 110%;
+    height: 60%;
+    
+}
+.content-paragraph{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 85px;
+}
+
+.content{
+    width: 90%;
+font-size: 14px;
+padding: 3px;
+
+}
+
+    }
+
+    @media screen and (max-width:425px) {
+      
+       
+#card img{
+    width: 120%;
+    height: 60%;
+    
+}
+
+   
+    }
+
+    @media screen and (max-width:375px){
+      
+       
+
+        #card img{
+            width: 110%;
+            height: 50%;
+            
+        }
+
+    
+.content{
+    width: 95%;
+font-size: 14px;
+
+
+}
+.source-name{
+    margin-right: 10px;
+    float: right;
+}
+    }
+
+      
